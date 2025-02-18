@@ -1,0 +1,12 @@
+<div class="tune">
+  <h1>{{ tune.name }}</h1>
+  <h1 (click)="onTogglePlay()">
+    <img
+      [src]="
+        playingTune === tune.file_name ? 'pause-circle.svg' : 'play-circle.svg'
+      "
+      alt="Play/Pause Icon"
+    />
+  </h1>
+  <button (click)="subscribe.emit(tune.code)">Subscribe</button>
+</div>

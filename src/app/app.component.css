@@ -1,0 +1,70 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.home {
+  padding-top: 50px;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  backdrop-filter: blur(10px);
+  opacity: 0.8;
+}
+.about {
+  height: fit-content;
+  width: 100%;
+  margin: 0 auto;
+}
+.contacts {
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  backdrop-filter: blur(10px);
+  opacity: 0.8;
+  padding-top: 10%;
+}
+.tunes {
+  height: fit-content;
+  width: 100%;
+  /* margin: 5% auto; */
+  background-color: #f0f0f0;
+  backdrop-filter: blur(10px);
+  opacity: 0.8;
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    left: 0;
+  }
+
+  .about {
+    width: 100%;
+    backdrop-filter: blur(10px);
+    opacity: 0.8;
+  }
+  .home {
+    width: 100%;
+    background-color: #f0f0f0;
+    backdrop-filter: blur(10px);
+    opacity: 0.8;
+  }
+  .tunes {
+    width: 100%;
+    background-color: #f0f0f0;
+    backdrop-filter: blur(10px);
+    opacity: 0.8;
+    margin-top: 80px;
+    height: 50%;
+  }
+  .contacts {
+    width: 100%;
+    background-color: #ffffff;
+    backdrop-filter: blur(10px);
+    opacity: 0.8;
+    margin-top: 3px;
+  }
+}

@@ -1,0 +1,55 @@
+<div class="modal">
+  <button (click)="back.emit()" class="go-back">Back to Tunes</button>
+  <div class="modal-content">
+    <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+          <label for="number">Number:</label>
+          <input
+            id="number"
+            formControlName="phoneNumber"
+            #phoenumber
+            type="text"
+            placeholder="254712345678"
+          />
+          <button
+            type="button"
+            [disabled]="isBtnActive"
+            class="get-code"
+            (click)="generateCode()"
+          >
+            Get Code
+          </button>
+        </div>
+        <div
+          class="errors"
+          *ngIf="phoneNumber?.invalid && phoneNumber?.touched"
+        >
+          <small *ngIf="phoneNumber?.errors?.['required']"
+            >Phone number is required.</small
+          >
+          <small *ngIf="phoneNumber?.errors?.['pattern']"
+            >Enter a valid Kenyan phone number (e.g., 2547XXXXXXXX).</small
+          >
+        </div>
+        <label for="code">Code:</label>
+        <input
+          id="code"
+          formControlName="code"
+          type="text"
+          placeholder="1234"
+        />
+        <div class="errors" *ngIf="code?.invalid && code?.touched">
+          <small *ngIf="code?.errors?.['required']">OTP is required.</small>
+          <small *ngIf="code?.errors?.['pattern']"
+            >Enter exactly a 4 digit number.</small
+          >
+        </div>
+      </div>
+      <div class="confirmation">
+        <button class="btn-ok" type="submit">Submit</button>
+        <button class="btn-cancel" (click)="back.emit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

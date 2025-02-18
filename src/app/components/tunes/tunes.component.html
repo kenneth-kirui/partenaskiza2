@@ -1,0 +1,29 @@
+<div>
+  <div class="tunes" id="tune">
+    <h2>Tunes Section</h2>
+    <ng-container *ngIf="currentView === 'tune'">
+      <div class="tune-list">
+        <app-tune
+          *ngFor="let tune of tunes"
+          [tune]="tune"
+          [playingTune]="playingTune"
+          (togglePlay)="togglePlay($event)"
+          (subscribe)="tuneSubscribed($event)"
+          class="tune"
+        ></app-tune>
+      </div>
+      <div class="pagination-controls">
+        <button (click)="prevousPage()" [disabled]="currentPage === 1">
+          Previous
+        </button>
+        <span>Page {{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="currentPageTunesCount > limit">
+          Next
+        </button>
+      </div>
+    </ng-container>
+    <ng-container class="subscribe" *ngIf="currentView === 'showSubscribe'">
+      <app-subscribe (back)="backToTunes()"></app-subscribe>
+    </ng-container>
+  </div>
+</div>
