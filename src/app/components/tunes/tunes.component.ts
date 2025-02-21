@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TuneComponent } from "./tune/tune.component";
 import { TuneserviceService } from '../../services/tuneservice.service';
@@ -25,11 +25,16 @@ export class TunesComponent implements OnInit {
   showSubscribe: boolean = false;
   currentView: string = 'tune';
   selectedTune: any = null;
+  screenWidth: number = 0;
+  isDesktop: boolean = false;
 
   constructor(private tunesService: TuneserviceService) { }
   
+  @Output() navigate = new EventEmitter<string>();
   ngOnInit() {
     this.fetchTunes();
+    this.screenWidth = window.innerWidth;
+    this.isDesktop = this.screenWidth>768;
   }
 
   fetchTunes() {
@@ -82,14 +87,30 @@ export class TunesComponent implements OnInit {
     return Math.floor(this.skip / this.limit) + 1;
   }
   tuneSubscribed(tune: any) {
-    console.log("need to dispalye the tune component")
-    localStorage.setItem('skiza_code', tune)
-    this.currentView = 'showSubscribe';
-    this.selectedTune = tune;
+    if (this.isDesktop) {
+      localStorage.setItem('skiza_code', tune)
+      this.currentView = 'showSubscribe';
+      this.selectedTune = tune;
+      this.navigate.emit('tune');
+      const tunesSection = document.getElementById('tune');
+      if (tunesSection) {
+        tunesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+    const smsUrl = `sms:${811}?body=${encodeURIComponent(`SKIZA ${tune}`)}`;
+    window.location.href = smsUrl;
+    }
   }
 
   backToTunes() {
     this.currentView = 'tune'; 
     this.showSubscribe = false;
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = event.target.innerWidth;
+    this.isDesktop = this.screenWidth < 768;
+  }
+
 }

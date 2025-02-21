@@ -1,5 +1,5 @@
 .about {
-  width: 75%;
+  width: 70%;
   margin: 0 auto;
 }
 .about h2 {
@@ -13,16 +13,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
 }
 .content p {
-  width: 90%;
-  margin-right: 5%;
+  width: 55%;
   font-size: 16px;
   font-weight: 100;
   line-height: 2;
-  color: black;
-  padding: 10px;
+  color: rgb(44, 42, 42);
   border-radius: 5px;
   border: 1px solid #ccc;
   height: 50%;
@@ -31,7 +28,7 @@
 video {
   border: 1px solid #ccc;
   height: 50%;
-  width: 80%;
+  width: 40%;
 }
 
 @media only screen and (max-width: 768px) {

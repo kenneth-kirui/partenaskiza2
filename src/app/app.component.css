@@ -9,9 +9,12 @@
   height: 100vh;
   width: 100%;
   margin: 0 auto;
-  background-color: #f0f0f0;
   backdrop-filter: blur(10px);
   opacity: 0.8;
+  background-image: url("/hero2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .about {
   height: fit-content;
@@ -30,7 +33,6 @@
 .tunes {
   height: fit-content;
   width: 100%;
-  /* margin: 5% auto; */
   background-color: #f0f0f0;
   backdrop-filter: blur(10px);
   opacity: 0.8;

@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { NavComponent } from "./components/nav/nav.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
@@ -22,7 +22,6 @@ export class AppComponent {
   currentSection: string = 'home';
   
   constructor(private viewportScroller: ViewportScroller) {}
-
   navigateToSection(section: string): void {
     switch (section) {
       case 'home':
@@ -45,8 +44,11 @@ export class AppComponent {
         console.log('Section not found, navigating to Home section');
         this.viewportScroller.scrollToAnchor('home');
         break;
-        
-     
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll(): void {
+    this.isScrolled = window.scrollY > 20;
   }
 }

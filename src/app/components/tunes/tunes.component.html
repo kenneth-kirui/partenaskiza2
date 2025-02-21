@@ -1,8 +1,8 @@
-<div>
-  <div class="tunes" id="tune">
+<div class="tunes">
+  <div id="tune">
     <h2>Tunes Section</h2>
     <ng-container *ngIf="currentView === 'tune'">
-      <div class="tune-list">
+      <div class="tune-list" *ngIf="isDesktop; else mobileContent">
         <app-tune
           *ngFor="let tune of tunes"
           [tune]="tune"
@@ -12,6 +12,17 @@
           class="tune"
         ></app-tune>
       </div>
+
+      <ng-template class="tune-list" #mobileContent>
+        <app-tune
+          *ngFor="let tune of tunes"
+          [tune]="tune"
+          [playingTune]="playingTune"
+          (togglePlay)="togglePlay($event)"
+          (subscribe)="tuneSubscribed($event)"
+          class="tune"
+        ></app-tune>
+      </ng-template>
       <div class="pagination-controls">
         <button (click)="prevousPage()" [disabled]="currentPage === 1">
           Previous
