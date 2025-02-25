@@ -1,4 +1,6 @@
 .contacts {
+}
+.contact-form {
   max-width: 800px;
   margin: 0 auto;
   padding: 50px;
@@ -6,7 +8,6 @@
   border-radius: 8px;
   border: 1px solid #ccc;
 }
-
 .contacts h2 {
   text-align: center;
   color: #333;
@@ -47,7 +48,10 @@
 .contacts button:hover {
   background-color: #58595b;
 }
-
+.social {
+  width: 70%;
+  margin: 0 auto;
+}
 .contacts .social {
   margin-top: 20px;
   text-align: center;
@@ -114,5 +118,8 @@
   .contacts .social .linkz img {
     width: 15px;
     height: 15px;
+  }
+  .social {
+    width: 100%;
   }
 }

@@ -17,9 +17,9 @@
   background-repeat: no-repeat;
 }
 .about {
-  height: fit-content;
+  height: 100vh;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 .contacts {
   height: 100vh;
@@ -31,9 +31,9 @@
   padding-top: 10%;
 }
 .tunes {
-  height: fit-content;
+  height: 100vh;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #d1cbcb;
   backdrop-filter: blur(10px);
   opacity: 0.8;
 }

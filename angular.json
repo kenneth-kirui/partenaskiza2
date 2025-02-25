@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "section-navigation": {
+    "partenaskiza2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/section-navigation",
+            "outputPath": "dist/partenaskiza2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "section-navigation:build:production"
+              "buildTarget": "partenaskiza2:build:production"
             },
             "development": {
-              "buildTarget": "section-navigation:build:development"
+              "buildTarget": "partenaskiza2:build:development"
             }
           },
           "defaultConfiguration": "development"
