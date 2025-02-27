@@ -7,6 +7,7 @@
   margin-top: 10%;
   margin-bottom: 5%;
   text-align: center;
+  color: #333;
 }
 .content {
   margin: auto;
@@ -46,7 +47,7 @@ video {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  video {
+  .content video {
     width: 90%;
     height: 80%;
     margin: auto;

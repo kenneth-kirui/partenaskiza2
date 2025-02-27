@@ -24,8 +24,7 @@ h2 {
 .pagination-controls {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  width: 100%;
+  width: 80%;
   margin: 0 45px;
 }
 .pagination-controls button {
