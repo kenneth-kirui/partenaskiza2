@@ -52,6 +52,7 @@ export class TunesComponent implements OnInit {
           this.currentAudio.play();
         } else {
           this.currentAudio.pause();
+           this.playingTune = null;
         }
         return;
       }
@@ -110,7 +111,7 @@ export class TunesComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = event.target.innerWidth;
-    this.isDesktop = this.screenWidth < 768;
+    this.isDesktop = this.screenWidth > 768;
   }
 
 }

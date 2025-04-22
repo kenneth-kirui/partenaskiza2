@@ -4,8 +4,8 @@
   height: 100vh;
 }
 .about h2 {
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 5%;
+  /* margin-bottom: 5%; */
   text-align: center;
   color: #333;
 }
@@ -17,20 +17,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border: #333;
 }
 .content p {
   width: 55%;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 2;
   color: rgb(44, 42, 42);
   border-radius: 5px;
   height: fit-content;
+  border-radius: #333;
 }
 
 video {
   border: 1px solid #ccc;
-  height: 50%;
+  height: 60%;
   width: 40%;
 }
 
